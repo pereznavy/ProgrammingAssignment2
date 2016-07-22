@@ -1,4 +1,4 @@
-## Put comments here that give an overall description of what your
+## We have two functions that are used to create a special vector that stores a numeric vector and cache’s its mean
 ## functions do
 
 ## Write a short comment describing this function
