@@ -16,9 +16,22 @@ makeCacheMatrix <- function(x = matrix()) {
      getinverse <- function() inv
      list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)
  }
+x = rbind(c(1, 3/8), c(3/8, 1))
+m = makeCacheMatrix(x)
+m$get()
 
-## Write a short comment describing this function
+## Cache function returns the mean of the especial vector cretaed by makeCacheMatrix
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+inv <- x$getinverse()
+     if(!is.null(inv)) {
+         message("getting cached data.")
+         return(inv)
+     }
+     data <- x$get()
+     inv <- solve(data)
+     x$setinverse(inv)
+     inv
+
 }
