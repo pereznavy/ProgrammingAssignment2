@@ -35,3 +35,4 @@ inv <- x$getinverse()
      inv
 
 }
+cacheSolve(m)
